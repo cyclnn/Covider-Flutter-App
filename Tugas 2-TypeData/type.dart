@@ -51,7 +51,7 @@
 //   print("Masukkan Nama Depan: ");
 //   String namdep = stdin.readLineSync()!;
 //   print("Masukkan Nama Belakang: ");
-//   String? nambel = stdin.readLineSync();
+//   String nambel = stdin.readLineSync()!;
 
 //   print("Nama Lengkap Anda Adalah: ${namdep} ${nambel}");
 // }
