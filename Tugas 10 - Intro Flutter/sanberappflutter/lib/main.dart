@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Tugas/Tugas12/Telegram.dart';
 import 'Tugas/Tugas13/HomeScreen.dart';
 import 'Tugas/Tugas13/LoginScreen.dart';
+import 'Tugas/Tugas14/get_data.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Telegram',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: Loginpage(),
+      home: GetDataAPI(),
     );
   }
 }
