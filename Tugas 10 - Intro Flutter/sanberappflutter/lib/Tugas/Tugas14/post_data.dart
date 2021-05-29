@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'get_data.dart';
-import 'package:http/http.dart' as http;
+import 'Get_data.dart';
 import 'Models/user_model.dart';
+import 'package:http/http.dart' as http;
 
-class PostDataAPI extends StatefulWidget {
+class PostDataApi extends StatefulWidget {
+  PostDataApi({Key key, this.title}) : super(key: key);
+  final String title;
+
   @override
-  _PostDataAPIState createState() => _PostDataAPIState();
+  _PostDataApiState createState() => _PostDataApiState();
 }
 
 Future<UserModel> createUser(
@@ -13,30 +16,34 @@ Future<UserModel> createUser(
   String email,
   String address,
 ) async {
-  var apiURL = Uri.parse("https://achmadhilmy-sanbercode.my.id/api/v1/profile");
-  final respon = await http.post(apiURL, body: {
+  var apiUrl = Uri.parse("https://achmadhilmy-sanbercode.my.id/api/v1/profile");
+  // var apiUrl = Uri.parse("https://reqres.in/api/users");
+  final response = await http.post(apiUrl, body: {
     "name": name,
     "email": email,
     "address": address,
   });
-  if (respon.statusCode == 201) {
-    final String responString = respon.body;
-    return userModelFromJson(responString);
+
+  if (response.statusCode == 201) {
+    final String responseString = response.body;
+
+    return userModelFromJson(responseString);
   } else {
     return null;
   }
 }
 
-class _PostDataAPIState extends State<PostDataAPI> {
+class _PostDataApiState extends State<PostDataApi> {
   UserModel _user;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Post Data'),
+        title: Text("Post Data"),
       ),
       body: Container(
         padding: EdgeInsets.all(32),
@@ -45,31 +52,26 @@ class _PostDataAPIState extends State<PostDataAPI> {
             TextField(
               controller: nameController,
               decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: 'Nama Lengkap'),
+                  border: OutlineInputBorder(), labelText: "Nama Lengkap"),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             TextField(
               controller: emailController,
               decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: 'Email'),
+                  border: OutlineInputBorder(), labelText: "Email"),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            SizedBox(height: 10),
             TextField(
               controller: addressController,
               decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: 'Alamat'),
+                  border: OutlineInputBorder(), labelText: "address "),
             ),
             SizedBox(
               height: 32,
             ),
             _user == null
                 ? Container()
-                : Text(
-                    'User dengan nama${_user.name} sudah ada, dan id nya ${_user.id}')
+                : Text("the user ${_user.name} is created, and id ${_user.id}"),
           ],
         ),
       ),
@@ -82,11 +84,11 @@ class _PostDataAPIState extends State<PostDataAPI> {
           setState(() {
             _user = user;
           });
-          Navigator.of(context).pop(GetDataAPI());
+          Navigator.of(context).pop(GetDataApi());
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
