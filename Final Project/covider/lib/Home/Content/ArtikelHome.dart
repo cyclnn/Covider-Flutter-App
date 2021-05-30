@@ -270,34 +270,6 @@ class _ArtikelhomeState extends State<Artikelhome> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.green,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.yellow,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Container(
-                      width: 160.0,
-                      color: Colors.orange,
-                    ),
-                  ),
                 ],
               ),
             ),

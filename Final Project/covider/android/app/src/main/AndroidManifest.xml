@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.covider">
    <application
-        android:label="Covider by Habib"
+        android:label="Covider"
         android:usesCleartextTraffic="true"
 
         android:icon="@mipmap/ic_launcher">

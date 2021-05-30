@@ -29,7 +29,7 @@ class Register extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 100,
+                height: 60,
               ),
               Center(
                 child: Text.rich(
@@ -45,11 +45,6 @@ class Register extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              Center(
-                  child: Image.asset(
-                'assets/img/ikon.png',
-                width: 120,
-              )),
               SizedBox(height: 30),
               TextFormField(
                 controller: _username,

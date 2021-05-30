@@ -11,8 +11,6 @@ import 'package:covider/Database.dart';
 
 FirebaseAuth auth = FirebaseAuth.instance;
 
-
-
 class HomeScreen2 extends StatefulWidget {
   @override
   _HomeScreen2State createState() => _HomeScreen2State();
@@ -21,8 +19,8 @@ class HomeScreen2 extends StatefulWidget {
 class _HomeScreen2State extends State<HomeScreen2> {
   User user;
 
-  var _tel = 'tel:082276880570';
-  var _sms = 'sms:082276880570';
+  var _tel = 'tel:0215210411';
+  var _sms = 'sms:081212123119';
   _telepon() async => await canLaunch(_tel)
       ? await launch(_tel)
       : throw 'Could not launch $_tel';
@@ -236,8 +234,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                     ),
                   ],
                 ),
-              )
-              ),
+              )),
           CardHome(),
           Artikelhome()
         ],
