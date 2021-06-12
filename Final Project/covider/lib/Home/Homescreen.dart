@@ -1,6 +1,5 @@
 import 'package:covider/Home/Content/ArtikelHome.dart';
 import 'package:covider/Home/Content/CardHome.dart';
-import 'package:covider/Home/Drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:covider/Auth/AuthServices.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:covider/Database.dart';
+import 'Drawer.dart';
 
 FirebaseAuth auth = FirebaseAuth.instance;
 
@@ -36,6 +36,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
     FlutterStatusbarcolor.setStatusBarColor(Color.fromRGBO(71, 63, 151, 1));
 
     return new Scaffold(
+      drawer: DrawerScreen(),
       appBar: AppBar(
           backgroundColor: Color.fromRGBO(71, 63, 151, 1),
           elevation: 0.0,
@@ -80,7 +81,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
               ),
             )
           ]),
-      drawer: DrawerScreen(),
       resizeToAvoidBottomInset: false,
       body: ListView(
         children: [

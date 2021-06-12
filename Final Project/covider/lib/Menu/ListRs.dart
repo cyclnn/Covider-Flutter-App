@@ -41,7 +41,13 @@ class _ListRSState extends State<ListRS> {
         backgroundColor: Color.fromRGBO(71, 63, 151, 1),
         toolbarHeight: 60,
         title: Text('Rumah Sakit Rujukan Covid-19'),
-        actions: [IconButton(icon: Icon(Icons.sync), onPressed: () {})],
+        actions: [
+          IconButton(
+              icon: Icon(Icons.sync),
+              onPressed: () {
+                getUserData();
+              })
+        ],
       ),
       body: Container(
           child: FutureBuilder(
